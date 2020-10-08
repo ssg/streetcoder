@@ -1,0 +1,8 @@
+{
+    "profiles": {
+        "TempReader": {
+            "commandName": "Project",
+            "commandLineArgs": "38.66,-121.4004"
+        }
+    }
+}

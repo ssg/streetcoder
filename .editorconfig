@@ -1,0 +1,44 @@
+root = true
+
+# common styles for C#
+[*.cs]
+max_line_length = 65
+indent_style = space
+
+dotnet_naming_rule.privcamel.symbols = private_members
+dotnet_naming_rule.privcamel.severity = error
+dotnet_naming_rule.privcamel.style = camelcase
+dotnet_naming_style.camelcase.capitalization = camel_case
+dotnet_naming_symbols.private_members.applicable_accessibilities = private
+dotnet_naming_symbols.private_members.applicable_kinds = property,method,field
+
+# the examples occasionally use skeleton code that doesn't
+# have any tied up implementation so we disable the warnings
+# about how the parameters we created are unused.
+
+# IDE0060: Remove unused parameter
+dotnet_code_quality_unused_parameters = all:none
+
+# CS0649: Field 'xx' is never assigned to, and will always have its default value null
+dotnet_diagnostic.CS0649.severity = none
+
+# actual nice code formatting rules (Allman style)
+[*.cs]
+indent_brace_style = Allman
+indent_size = 4
+
+# book formatting rules (K&R) to save space 
+
+[*.csxx]
+indent_brace_style = K&R
+indent_size = 2
+
+dotnet_naming_rule.privcamel.symbols = private_members
+dotnet_naming_rule.privcamel.severity = error
+dotnet_naming_rule.privcamel.style = camelcase
+dotnet_naming_style.camelcase.capitalization = camel_case
+dotnet_naming_symbols.private_members.applicable_accessibilities = private
+dotnet_naming_symbols.private_members.applicable_kinds = property,method,field
+
+csharp_new_line_before_open_brace = none
+csharp_new_line_before_else = false
