@@ -1,0 +1,18 @@
+﻿@page
+@model FoobleXSS.Pages.LoginModel
+<form method="post">
+    @Html.DisplayFor(m => m.ErrorMessage)
+    <div>
+    @Html.LabelFor(m => m.Username)
+    </div>
+    <div>
+    @Html.TextBoxFor(m => m.Username)
+    </div>
+    <div>
+    @Html.LabelFor(m => m.Password)
+    </div>
+    <div>
+    @Html.PasswordFor(m => m.Password)
+    </div>
+    <button type="submit">Login</button>
+</form>

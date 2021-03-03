@@ -1,0 +1,25 @@
+﻿@model HomepageModel
+@{
+    ViewBag.Title = "Blab!";
+}
+
+<h1>Blabber</h1>
+
+@using (Html.BeginForm("Post", "Blab", FormMethod.Post))
+{
+    @Html.ValidationMessageFor(m => m.Form)
+    @Html.EditorFor(m => m.Form)
+
+    <button class="btn btn-primary" type="submit">Post Blab!</button>
+}
+
+<div>
+    @if (Model?.Blabs is null || !(Model.Blabs.Any()))
+    {
+        <p>No blabs yet!</p>
+    }
+    else
+    {
+        @Html.DisplayFor(m => m.Blabs)
+    }
+</div>

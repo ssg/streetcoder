@@ -1,0 +1,4 @@
+# first line is for UTF-8 BOM safety 
+# https://github.com/eslint/eslint/issues/11777
+
+Scripts/

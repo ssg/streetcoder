@@ -1,0 +1,7 @@
+﻿@model Blab
+<div class="blab">
+    @Model.Content
+    <div class="date">
+        @((DateTime.Now - Model.CreatedOn).ToIntervalString())
+    </div>
+</div>

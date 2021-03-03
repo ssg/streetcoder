@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Fooble</h1>
+    <p>
+        Fooble is the ultimate useless search engine that returns nothing.
+    </p>
+@if (Model.Query is object) {
+    <p>
+        Your search for <em>"@Model.Query"</em> 
+        didn't return any results.
+    </p>
+}
+    <form method="GET">
+        <input type="text" name="q" placeholder="Enter your search query" />
+        <button type="submit">Search!</button>
+        <button>I'm feeling a little peculiar</button>
+    </form>
+</div>
