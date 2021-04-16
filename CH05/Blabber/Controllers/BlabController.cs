@@ -6,11 +6,11 @@ namespace Blabber.Controllers
 {
     public class BlabController : Controller
     {
-        private readonly BlabStorage storage;
+        private readonly BlabStorage _storage;
 
         public BlabController(BlabStorage storage)
         {
-            this.storage = storage;
+            _storage = storage;
         }
 
         private ActionResult home()
@@ -25,7 +25,7 @@ namespace Blabber.Controllers
                 return home();
             }
             var blab = new Blab(form.Content, DateTimeOffset.Now);
-            storage.Add(blab);
+            _storage.Add(blab);
             return home();
         }
     }

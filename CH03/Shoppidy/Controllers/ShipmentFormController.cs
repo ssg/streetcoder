@@ -10,7 +10,7 @@ public enum ShippingFormValidationResult {
 }
 
 public class ShipmentFormController : Controller {
-  private IShipmentService service;
+  private IShipmentService _service;
 
   public IActionResult Index() {
     return View();
@@ -21,11 +21,11 @@ public class ShipmentFormController : Controller {
     if (!ModelState.IsValid) {
       return RedirectToAction("Index", "ShippingForm", form);
     }
-    var validationResult = service.ValidateShippingForm(form);
+    var validationResult = _service.ValidateShippingForm(form);
     if (validationResult != ShippingFormValidationResult.Valid) {
       return RedirectToAction("Index", "ShippingForm", form);
     }
-    bool success = service.SaveShippingInfo(form);
+    bool success = _service.SaveShippingInfo(form);
     if (!success) {
       ModelState.AddModelError("", "Problem occurred while " +
         "saving your information, please try again");
@@ -39,11 +39,11 @@ public class ShipmentFormController : Controller {
     if (!ModelState.IsValid) {
       goto Error;
     }
-    var validationResult = service.ValidateShippingForm(form);
+    var validationResult = _service.ValidateShippingForm(form);
     if (validationResult != ShippingFormValidationResult.Valid) {
       goto Error;
     }
-    bool success = service.SaveShippingInfo(form);
+    bool success = _service.SaveShippingInfo(form);
     if (!success) {
       ModelState.AddModelError("", "Problem occurred while " +
         "saving your information, please try again");
@@ -59,11 +59,11 @@ public class ShipmentFormController : Controller {
     if (!ModelState.IsValid) {
       goto Error;
     }
-    var validationResult = service.ValidateShippingForm(form);
+    var validationResult = _service.ValidateShippingForm(form);
     if (validationResult != ShippingFormValidationResult.Valid) {
       goto Error;
     }
-    bool success = service.SaveShippingInfo(form);
+    bool success = _service.SaveShippingInfo(form);
     if (!success) {
       ModelState.AddModelError("", "Problem occurred while " +
         "saving your information, please try again");
@@ -85,11 +85,11 @@ public class ShipmentFormController : Controller {
     if (!ModelState.IsValid) {
       return error();
     }
-    var validationResult = service.ValidateShippingForm(form);
+    var validationResult = _service.ValidateShippingForm(form);
     if (validationResult != ShippingFormValidationResult.Valid) {
       return error();
     }
-    bool success = service.SaveShippingInfo(form);
+    bool success = _service.SaveShippingInfo(form);
     if (!success) {
       ModelState.AddModelError("", "Problem occurred while " +
         "saving your information, please try again");
@@ -102,31 +102,31 @@ public class ShipmentFormController : Controller {
 
 [HttpPost]
 public IActionResult Submit6(ShipmentAddress form) {
-  if (!validate(form)) {
-    return shippingFormError();
+  if (!_validate(form)) {
+    return _shippingFormError();
   }
-  bool success = service.SaveShippingInfo(form);
+  bool success = _service.SaveShippingInfo(form);
   if (!success) {
-    reportSaveError();
-    return shippingFormError(form);
+    _reportSaveError();
+    return _shippingFormError(form);
   }
   return RedirectToAction("Index", "BillingForm");
 }
 
-private bool validate(ShipmentAddress form) {
+private bool _validate(ShipmentAddress form) {
   if (!ModelState.IsValid) {
     return false;
   }
-  var validationResult = service.ValidateShippingForm(form);
+  var validationResult = _service.ValidateShippingForm(form);
   return validationResult == ShippingFormValidationResult.Valid;
 }
 
-private IActionResult shippingFormError(ShipmentAddress form = null) {
+private IActionResult _shippingFormError(ShipmentAddress form = null) {
   Response.Cookies.Append("shipping_error", "1");
   return RedirectToAction("Index", "ShippingForm", form);
 }
 
-private void reportSaveError() {
+private void _reportSaveError() {
   ModelState.AddModelError("", "Problem occurred while " +
     "saving your information, please try again");
 }
@@ -156,13 +156,13 @@ private void reportSaveError() {
       return error();
     }
     // validate the form with server side validation logic.
-    var validationResult = service.ValidateShippingForm(form);
+    var validationResult = _service.ValidateShippingForm(form);
     // is the validation successful?
     if (validationResult != ShippingFormValidationResult.Valid) {
       return error();
     }
     // save shipping information
-    bool success = service.SaveShippingInfo(form);
+    bool success = _service.SaveShippingInfo(form);
     if (!success) {
       // failed to save. report the error to the user.
       ModelState.AddModelError("", "Problem occurred while " +

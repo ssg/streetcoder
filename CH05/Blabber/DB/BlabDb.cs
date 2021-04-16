@@ -7,16 +7,16 @@ namespace Blabber.DB
 {
     public class BlabDb : IBlabDb
     {
-        private readonly BlabberContext db;
+        private readonly BlabberContext _db;
 
         public BlabDb(BlabberContext db)
         {
-            this.db = db;
+            _db = db;
         }
 
         public void AddBlab(Blab blab)
         {
-            db.Blabs.Add(new BlabEntity()
+            _db.Blabs.Add(new BlabEntity()
             {
                 // SQLite provider for .NET Framework doesn't
                 // support auto generated GUID identifiers.
@@ -24,12 +24,12 @@ namespace Blabber.DB
                 Content = blab.Content,
                 CreatedOn = blab.CreatedOn.UtcDateTime,
             });
-            db.SaveChanges();
+            _db.SaveChanges();
         }
 
         public IEnumerable<Blab> GetAllBlabs()
         {
-            return db.Blabs
+            return _db.Blabs
                 .OrderByDescending(b => b.CreatedOn)
                 .ToList()
                 .Select(b => new Blab(b.Content,

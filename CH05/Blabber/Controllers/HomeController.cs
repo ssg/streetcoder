@@ -6,12 +6,13 @@ namespace Blabber.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly BlabStorage _storage;
         public HomeController(BlabStorage storage)
         {
-            this.storage = storage;
+            _storage = storage;
         }
 
-        private static readonly HomepageModel defaultHomepageModel = new HomepageModel
+        private static readonly HomepageModel _defaultHomepageModel = new HomepageModel
         {
             Blabs = Enumerable.Empty<Blab>(),
             Form = new BlabForm()
@@ -20,12 +21,10 @@ namespace Blabber.Controllers
             }
         };
 
-        private readonly BlabStorage storage;
-
         public ActionResult Index()
         {
-            var model = defaultHomepageModel;
-            model.Blabs = storage.GetAllBlabs();
+            var model = _defaultHomepageModel;
+            model.Blabs = _storage.GetAllBlabs();
             return View(model);
         }
 
