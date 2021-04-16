@@ -9,6 +9,7 @@ dotnet_naming_rule.privcamel.symbols = private_members
 dotnet_naming_rule.privcamel.severity = error
 dotnet_naming_rule.privcamel.style = camelcase
 dotnet_naming_style.camelcase.capitalization = camel_case
+dotnet_naming_style.camelcase.required_prefix = _
 dotnet_naming_symbols.private_members.applicable_accessibilities = private
 dotnet_naming_symbols.private_members.applicable_kinds = property,method,field
 
@@ -37,6 +38,7 @@ dotnet_naming_rule.privcamel.symbols = private_members
 dotnet_naming_rule.privcamel.severity = error
 dotnet_naming_rule.privcamel.style = camelcase
 dotnet_naming_style.camelcase.capitalization = camel_case
+dotnet_naming_style.camelcase.required_prefix = _
 dotnet_naming_symbols.private_members.applicable_accessibilities = private
 dotnet_naming_symbols.private_members.applicable_kinds = property,method,field
 
