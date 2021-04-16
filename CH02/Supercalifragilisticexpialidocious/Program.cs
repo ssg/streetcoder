@@ -38,7 +38,7 @@ internal class Program
         return path;
     }
 
-    public void IPLoopback()
+    public void IpLoopback()
     {
         var testAddress = IPAddress.Loopback;
     }

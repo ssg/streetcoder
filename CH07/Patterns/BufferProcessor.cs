@@ -2,7 +2,7 @@
 
 namespace Patterns {
   public class BufferProcessor {
-public static void MultiplyEachSIMD(int[] buffer, int value) {
+public static void MultiplyEachSimd(int[] buffer, int value) {
   if (!Vector.IsHardwareAccelerated) {
     MultiplyEachClassic(buffer, value);
   }

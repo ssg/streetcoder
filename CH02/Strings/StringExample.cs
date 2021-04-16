@@ -15,7 +15,7 @@ public class StringExample
         return result;
     }
 
-    public static string JoinNamesSB(string[] names)
+    public static string JoinNamesSb(string[] names)
     {
         var builder = new StringBuilder();
         int lastIndex = names.Length - 1;

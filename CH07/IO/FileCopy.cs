@@ -61,7 +61,7 @@ public static Task CopyAsyncOld(string sourceFilename,
     outputStream.Dispose();
   });
 
-  void onRead(IAsyncResult readResult) {
+  void OnRead(IAsyncResult readResult) {
     int bytesRead = inputStream.EndRead(readResult);
     if (bytesRead == 0) {
       onComplete.Start();
@@ -70,13 +70,13 @@ public static Task CopyAsyncOld(string sourceFilename,
     outputStream.BeginWrite(buffer, 0, bytesRead,
       writeResult => {
         outputStream.EndWrite(writeResult);
-        inputStream.BeginRead(buffer, 0, bufferSize, onRead,
+        inputStream.BeginRead(buffer, 0, bufferSize, OnRead,
           null);
       }, null);
   }
 
   var result = inputStream.BeginRead(buffer, 0, bufferSize,
-    onRead, null);
+    OnRead, null);
   return Task.WhenAll(onComplete);
 }
   }

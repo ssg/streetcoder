@@ -10,8 +10,8 @@ namespace Patterns {
     }
 
     [Benchmark]
-    public void MultiplyEachSIMD() {
-      BufferProcessor.MultiplyEachSIMD(Buffer, 2);
+    public void MultiplyEachSimd() {
+      BufferProcessor.MultiplyEachSimd(Buffer, 2);
     }
 
 

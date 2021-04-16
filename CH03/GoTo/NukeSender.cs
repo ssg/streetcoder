@@ -1,6 +1,6 @@
 ﻿public class NukeSender
 {
-    public void sendNukes(double lat, double lon, string password)
+    public void SendNukes(double lat, double lon, string password)
     {
     }
 }
