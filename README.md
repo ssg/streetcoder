@@ -1,13 +1,13 @@
 # about
 
 This repository contains example code snippets 
-referenced in my book [Street Coder](https://www.manning.com/books/street-coder)
+referenced in my book [Street Coder](https://streetcoder.org)
 published by Manning Books.
 
 # requirements
 
-Most of the code requires at least .NET Core SDK 3.1
-to be built. You can download the latest
+Most of the code requires at least .NET 5 to be built with one project being in
+.NET Framework which is required for the migration example. You can download the latest
 .NET SDK at [Microsoft's download page](https://dotnet.microsoft.com/download).
 
 I used [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
