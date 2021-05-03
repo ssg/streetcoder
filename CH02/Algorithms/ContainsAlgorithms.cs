@@ -1,6 +1,6 @@
 ﻿namespace Algorithms
 {
-    public class Contains
+    public class ContainsAlgorithms
     {
         public static bool Contains1(int[] array, int lookFor)
         {
@@ -42,13 +42,13 @@
             return false;
         }
 
-        public static bool Contains4(uint[] array, uint lookFor)
+        public static bool Contains(uint[] array, uint lookFor)
         {
             int start = 0;
             int end = array.Length - 1;
             while (start <= end)
             {
-                int middle = (start + end) / 2;
+                int middle = start + ((end - start) / 2);
                 uint value = array[middle];
                 if (lookFor == value)
                 {
@@ -56,11 +56,11 @@
                 }
                 if (lookFor > value)
                 {
-                    start = middle + 1; // eliminate left half
+                    start = middle + 1;
                 }
                 else
                 {
-                    end = middle - 1; // eliminate right half
+                    end = middle - 1;
                 }
             }
             return false;

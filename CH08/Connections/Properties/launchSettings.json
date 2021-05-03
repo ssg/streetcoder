@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Connections": {
+      "commandName": "Project",
+      "commandLineArgs": "https://www.google.com https://www.bing.com https://eksisozluk.com https://www.reddit.com https://twitter.com https://streetcoder.org"
+    }
+  }
+}
