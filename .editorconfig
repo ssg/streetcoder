@@ -1,3 +1,4 @@
+# Suppress: EC102
 root = true
 
 # common styles for C#
@@ -22,23 +23,28 @@ dotnet_code_quality_unused_parameters = all:none
 # CS0649: Field 'xx' is never assigned to, and will always have its default value null
 dotnet_diagnostic.CS0649.severity = none
 
+# IDE0058: Expression value is never used
+dotnet_diagnostic.IDE0058.severity = none
+
+# IDE0046: Convert to conditional expression
+dotnet_diagnostic.IDE0046.severity = none
+
+# CA1050: Declare types in namespaces
+dotnet_diagnostic.CA1050.severity = none
+
+# CS8524: The switch expression does not handle some values of its input type (it is not exhaustive) involving an unnamed enum value.
+dotnet_diagnostic.CS8524.severity = none
+
 # actual nice code formatting rules (Allman style)
-[*.cs]
-indent_brace_style = Allman
+[*.csxx]
+csharp_new_line_before_open_brace = all
 indent_size = 4
 
 # book formatting rules (K&R) to save space 
 
-[*.csxx]
-indent_brace_style = K&R
+[*.cs]
+csharp_new_line_before_open_brace = none
 indent_size = 2
 
-dotnet_naming_rule.privcamel.symbols = private_members
-dotnet_naming_rule.privcamel.severity = error
-dotnet_naming_rule.privcamel.style = camelcase
-dotnet_naming_style.camelcase.capitalization = camel_case
-dotnet_naming_symbols.private_members.applicable_accessibilities = private
-dotnet_naming_symbols.private_members.applicable_kinds = property,method,field
 
-csharp_new_line_before_open_brace = none
-csharp_new_line_before_else = false
+
