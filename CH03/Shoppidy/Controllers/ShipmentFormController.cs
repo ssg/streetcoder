@@ -121,8 +121,7 @@ private bool validate(ShipmentAddress form) {
   return validationResult == ShippingFormValidationResult.Valid;
 }
 
-private IActionResult shippingFormError(ShipmentAddress form 
-    = null) {
+private IActionResult shippingFormError(ShipmentAddress form = null) {
   Response.Cookies.Append("shipping_error", "1");
   return RedirectToAction("Index", "ShippingForm", form);
 }
