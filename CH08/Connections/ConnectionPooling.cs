@@ -21,9 +21,12 @@ namespace Connections {
             new MySqlParameter("prefs", prefs));
       }
     }
+
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
     public static async Task<int> Sum(int a, int b) {
       return a + b;
     }
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 
     public async Task UpdateCustomerPreferencesAsync(string name,
       string prefs) {
