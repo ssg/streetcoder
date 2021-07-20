@@ -10,8 +10,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.23" />
-    <PackageReference Include="Npgsql" Version="5.0.4" />
+    <PackageReference Include="MySql.Data" Version="8.0.26" />
+    <PackageReference Include="Npgsql" Version="5.0.7" />
     <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
   </ItemGroup>
 </Project>
