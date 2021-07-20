@@ -15,7 +15,7 @@ namespace Exceptions {
   }
 
   public class ImageAlbum : Controller {
-    private IDatabase db;
+    //private IDatabase db;
 
     //[HttpPost]
     //public IActionResult UploadNaive(AlbumForm form) {
