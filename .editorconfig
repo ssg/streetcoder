@@ -35,6 +35,12 @@ dotnet_diagnostic.CA1050.severity = none
 # CS8524: The switch expression does not handle some values of its input type (it is not exhaustive) involving an unnamed enum value.
 dotnet_diagnostic.CS8524.severity = none
 
+# IDE0044: Add readonly modifier
+dotnet_diagnostic.IDE0044.severity = silent
+
+# IDE0090: Use new(...) syntax
+dotnet_diagnostic.IDE0090.severity = silent
+
 # actual nice code formatting rules (Allman style)
 [*.csxx]
 csharp_new_line_before_open_brace = all
@@ -45,6 +51,4 @@ indent_size = 4
 [*.cs]
 csharp_new_line_before_open_brace = none
 indent_size = 2
-
-
 
