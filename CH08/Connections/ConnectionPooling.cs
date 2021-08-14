@@ -28,19 +28,6 @@ namespace Connections {
     }
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 
-    public async Task UpdateCustomerPreferencesAsync(string name,
-      string prefs) {
-      int? result = await MySqlHelper.ExecuteScalarAsync(
-        customerConnection,
-        "SELECT id FROM customers WHERE name=@name",
-        new MySqlParameter("name", name)) as int?;
-      if (result.HasValue) {
-        await MySqlHelper.ExecuteNonQueryAsync(customerConnection,
-            "UPDATE customer_prefs SET pref=@prefs",
-            new MySqlParameter("prefs", prefs));
-      }
-    }
-
     public void UpdateCustomerPreferences2(string name, string prefs) {
       using var connection = new MySqlConnection(connectionString);
       connection.Open();
@@ -71,6 +58,18 @@ namespace Connections {
       }
     }
 
+    public async Task UpdateCustomerPreferencesAsync(string name,
+      string prefs) {
+      int? result = await MySqlHelper.ExecuteScalarAsync(
+        customerConnection,
+        "SELECT id FROM customers WHERE name=@name",
+        new MySqlParameter("name", name)) as int?;
+      if (result.HasValue) {
+        await MySqlHelper.ExecuteNonQueryAsync(customerConnection,
+            "UPDATE customer_prefs SET pref=@prefs",
+            new MySqlParameter("prefs", prefs));
+      }
+    }
   }
 
   internal interface IDummyDbContext {
