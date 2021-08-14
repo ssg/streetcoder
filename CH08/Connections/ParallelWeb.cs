@@ -14,7 +14,7 @@ namespace Connections {
         var task = client.GetStringAsync(uri);
         runningTasks.Add(uri, task);
       }
-      _ = await Task.WhenAll(runningTasks.Values);
+      await Task.WhenAll(runningTasks.Values);
       return runningTasks.ToDictionary(kp => kp.Key, 
         kp => kp.Value.Result);
     }
