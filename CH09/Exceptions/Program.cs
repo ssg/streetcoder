@@ -9,6 +9,7 @@ namespace Exceptions {
     public static void Main(string[] args) {
       if (args.Length == 0) {
         Console.WriteLine("Usage: update <file_url> | -selfupdate");
+        Environment.Exit(1);
       }
 
       string updatePath = Path.Combine(Path.GetTempPath(),
@@ -50,15 +51,15 @@ namespace Exceptions {
       return true;
     }
 
-private static bool downloadFile(Uri uri, string path) {
-  using var client = new WebClient();
-  try {
-    client.DownloadFile(uri, path);
-    return true;
-  }
-  catch (WebException) {
-    return false;
-  }      
-}
+    private static bool downloadFile(Uri uri, string path) {
+      using var client = new WebClient();
+      try {
+        client.DownloadFile(uri, path);
+        return true;
+      }
+      catch (WebException) {
+        return false;
+      }
+    }
   }
 }
