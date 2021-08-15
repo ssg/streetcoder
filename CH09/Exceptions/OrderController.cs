@@ -27,12 +27,12 @@ namespace Exceptions {
       if (!db.TryChangeOrderStatus(order, from: OrderStatus.New,
         to: OrderStatus.Processing)) {
         if (order.Status != OrderStatus.Processing) {
-          return resultPage(order);
+          return redirectToResultPage(order);
         }
 
         if (DateTimeOffset.Now - order.LastUpdate > orderTimeout) {
           db.ChangeOrderStatus(order, OrderStatus.Failed);
-          return resultPage(order);
+          return redirectToResultPage(order);
         }
 
         return orderStatusView(order);
@@ -46,7 +46,7 @@ namespace Exceptions {
           to: OrderStatus.Complete);
       }
 
-      return resultPage(order);
+      return redirectToResultPage(order);
     }
 
     private bool processOrder(Order order) {
@@ -61,7 +61,7 @@ namespace Exceptions {
       return View("OrderStatus", order);
     }
 
-    private IActionResult resultPage(Order order) {
+    private IActionResult redirectToResultPage(Order order) {
       return RedirectToAction("Result", new { orderId = order.Id });
     }
   }
