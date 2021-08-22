@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CoreTweet" Version="1.0.0.483" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="5.0.9" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
