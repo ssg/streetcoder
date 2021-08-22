@@ -3,12 +3,6 @@
     <TargetFramework>net5.0</TargetFramework>
       <OutputType>Exe</OutputType>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.26" />
     <PackageReference Include="Npgsql" Version="5.0.7" />
