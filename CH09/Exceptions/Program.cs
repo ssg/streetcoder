@@ -52,6 +52,9 @@ namespace Exceptions {
     }
 
     private static bool downloadFile(Uri uri, string path) {
+      // WebClient is old and soon to be obsoleted for making
+      // HTTP requests. HttpClient should be preferred.
+      // But it's simple enough for our example here.
       using var client = new WebClient();
       try {
         client.DownloadFile(uri, path);
