@@ -1,0 +1,38 @@
+{
+  "solution": {
+    "path": "streetcoder.sln",
+    "projects": [
+      "CH02\\Algorithms\\Algorithms.csproj",
+      "CH02\\Arrays\\Arrays.csproj",
+      "CH02\\HashCode\\HashCode.csproj",
+      "CH02\\Nullability\\Nullability.csproj",
+      "CH02\\ReferenceVsValueTypes\\ReferenceVsValueTypes.csproj",
+      "CH02\\Supercalifragilisticexpialidocious\\Supercalifragilisticexpialidocious.csproj",
+      "CH02\\ValidationContext\\ValidationContext.csproj",
+      "CH03\\ClassesVsStructs\\ClassesVsStructs.csproj",
+      "CH03\\EmojiChat\\EmojiChat.csproj",
+      "CH03\\HttpHandler\\TempReader.csproj",
+      "CH03\\IfElse\\IfElse.csproj",
+      "CH03\\OrderAPI\\OrderAPI.csproj",
+      "CH03\\Shoppidy\\Shoppidy.csproj",
+      "CH03\\TechnicalDebt\\TechnicalDebt.csproj",
+      "CH03\\Twistat\\Twistat.csproj",
+      "CH04\\DateUtilsTests\\Tests.csproj",
+      "CH04\\DateUtils\\DateUtils.csproj",
+      "CH04\\Posts\\Posts.csproj",
+      "CH04\\Summer\\Summer.csproj",
+      "CH04\\User\\User.csproj",
+      "CH05\\Blabber.Models\\Blabber.Models.csproj",
+      "CH05\\BlabberCore\\BlabberCore.csproj",
+      "CH05\\DI\\DI.csproj",
+      "CH06\\LoginExample\\LoginExample.csproj",
+      "CH06\\XSS\\FoobleXSS.csproj",
+      "CH07\\BenchmarkRunner\\SimpleBenchmarkRunner.csproj",
+      "CH07\\IO\\IO.csproj",
+      "CH07\\Patterns\\Patterns.csproj",
+      "CH08\\Connections\\Connections.csproj",
+      "CH09\\Exceptions\\Exceptions.csproj",
+      "CH09\\InfiniteLoop\\InfiniteLoop.csproj"
+    ]
+  }
+}
