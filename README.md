@@ -12,7 +12,10 @@ You can download the latest .NET SDK
 at [Microsoft's download page](https://dotnet.microsoft.com/download).
 
 One project requires .NET Framework in order to be built as it's 
-part of a scenario about migrating from .NET Framework to .NET Core. 
+part of a scenario about migrating from .NET Framework to .NET Core. If you're
+on an environment that can't build .NET Framework projects, you can open
+`streetcoder-nowin.slnf` solution filter to filter it out instead of the main
+solution file `streetcoder.sln`.
 
 I used [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 whose Community Edition is free, but you should also be able to use 
