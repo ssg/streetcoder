@@ -1,3 +1,7 @@
+<a href="https://streetcoder.org">
+  <img alt="book cover" src="https://user-images.githubusercontent.com/241217/150715271-6bcbf5ae-ed59-4360-94bd-dac1c000b1ea.png" width="100">
+</a>
+
 # about
 
 This repository contains the example code snippets 
