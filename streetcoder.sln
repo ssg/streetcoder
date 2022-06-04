@@ -10,9 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CH02", "CH02", "{19E5A84B-752F-403D-BA66-C8BF84CC1CCD}"
-	ProjectSection(SolutionItems) = preProject
-		CH02\Strings\Strings.csproj = CH02\Strings\Strings.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CH03", "CH03", "{39FD5B11-E3F3-4901-9A30-C6ED38F06E84}"
 EndProject
@@ -34,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Posts", "CH04\Posts\Posts.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms", "CH02\Algorithms\Algorithms.csproj", "{180D3A17-9B9F-4300-98BC-F8532400FF39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "CH02\Arrays\Arrays.csproj", "{BEBE023C-2498-4209-9A0D-4B3B6A810BAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays", "CH02\Arrays\Arrays.csproj", "{BEBE023C-2498-4209-9A0D-4B3B6A810BAB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashCode", "CH02\HashCode\HashCode.csproj", "{A1EE7F3A-E576-46FB-9C2F-A7F8D466C086}"
 EndProject
@@ -91,6 +88,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfiniteLoop", "CH09\InfiniteLoop\InfiniteLoop.csproj", "{97E2BCAE-69CC-4BC2-BBAE-A1D9003FE4C3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shoppidy", "CH03\Shoppidy\Shoppidy.csproj", "{E80E9BC7-D1B9-4375-8E90-63562876A7C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strings", "CH02\Strings\Strings.csproj", "{3DCC401D-9003-405E-91B2-94F4FD8CE95E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -226,6 +225,10 @@ Global
 		{E80E9BC7-D1B9-4375-8E90-63562876A7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E80E9BC7-D1B9-4375-8E90-63562876A7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E80E9BC7-D1B9-4375-8E90-63562876A7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCC401D-9003-405E-91B2-94F4FD8CE95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCC401D-9003-405E-91B2-94F4FD8CE95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCC401D-9003-405E-91B2-94F4FD8CE95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCC401D-9003-405E-91B2-94F4FD8CE95E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -263,6 +266,7 @@ Global
 		{A634B28D-61A2-4783-9CA5-5337412A96D9} = {A92C174B-77BF-49E0-89B4-40E9D8518069}
 		{97E2BCAE-69CC-4BC2-BBAE-A1D9003FE4C3} = {A92C174B-77BF-49E0-89B4-40E9D8518069}
 		{E80E9BC7-D1B9-4375-8E90-63562876A7C3} = {39FD5B11-E3F3-4901-9A30-C6ED38F06E84}
+		{3DCC401D-9003-405E-91B2-94F4FD8CE95E} = {19E5A84B-752F-403D-BA66-C8BF84CC1CCD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {194825CB-72AE-476D-8A3F-19C1B6D8DF8D}
