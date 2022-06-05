@@ -52,6 +52,7 @@ namespace Exceptions {
     }
 
     private static bool downloadFile(Uri uri, string path) {
+#pragma warning disable SYSLIB0014 // Type or member is obsolete
       // WebClient is old and soon to be obsoleted for making
       // HTTP requests. HttpClient should be preferred.
       // But it's simple enough for our example here.
@@ -64,5 +65,6 @@ namespace Exceptions {
         return false;
       }
     }
+#pragma warning restore SYSLIB0014 // Type or member is obsolete
   }
 }
