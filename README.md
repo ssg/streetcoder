@@ -12,7 +12,8 @@ published by Manning Publications.
 
 Almost all projects target .NET 6. They targeted .NET 5 before, but .NET 5 support 
 ended in early 2022. With .NET 6 support, you can build the projects using current 
-tools with as little installation work and warnings as possible. I plan on maintaining 
+tools with as little installation work and warnings as possible. 
+The source code is still in parity with the book. I plan on maintaining 
 this repository as easily buildable as possible for readers.
 
 One project requires .NET Framework 4.8 which was required for the migration example. 
