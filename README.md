@@ -10,21 +10,21 @@ published by Manning Publications.
 
 # requirements
 
-Most of the code requires at least .NET 5 to be built. One project requires 
-.NET Framework which is required for the migration example at the moment. 
-You can download the latest .NET SDK 
-at [Microsoft's download page](https://dotnet.microsoft.com/download).
+Almost all projects target .NET 6. They targeted .NET 5 before, but .NET 5 support 
+ended in early 2022. With .NET 6 support, you can build the projects using current 
+tools with as little installation work and warnings as possible. I plan on maintaining 
+this repository as easily buildable as possible for readers.
 
-One project requires .NET Framework in order to be built as it's 
-part of a scenario about migrating from .NET Framework to .NET Core. If you're
-on an environment that can't build .NET Framework projects, you can open
-`streetcoder-nowin.slnf` solution filter to filter it out instead of the main
+One project requires .NET Framework 4.8 which was required for the migration example. 
+You can open `streetcoder-nowin.slnf` solution filter to filter it out instead of the main
 solution file `streetcoder.sln`.
 
-I used [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
-whose Community Edition is free, but you should also be able to use 
-[Visual Studio Code](https://code.visualstudio.com/)
-with the [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) 
+You can open and build solution and project files using the latest version 
+of [Visual Studio](https://visualstudio.microsoft.com/vs/). The Community Edition of Visual Studio 
+is free for personal use, and it's available on Mac too.
+
+You can also use [Visual Studio Code](https://code.visualstudio.com/) with 
+[OmniSharp C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) 
 if you find it more comfortable.
 
 # notes
