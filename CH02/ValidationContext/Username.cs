@@ -1,25 +1,24 @@
 ﻿using System;
 
-namespace ValidationContext
+namespace ValidationContext;
+
+public class Username
 {
-    public class Username
+    public const int MaxLength = 50; // have username
+
+    public string Value { get; }
+
+    public Username(string value)
     {
-        public const int MaxLength = 50; // have username
-
-        public string Value { get; }
-
-        public Username(string value)
+        value = value.Trim(); // normalize spaces
+        if (String.IsNullOrEmpty(value)
+            || value.Length < 1
+            || value.Length > MaxLength)
         {
-            value = value.Trim(); // normalize spaces
-            if (String.IsNullOrEmpty(value)
-                || value.Length < 1
-                || value.Length > MaxLength)
-            {
-                throw new ArgumentException("Invalid username", nameof(value));
-            }
-            this.Value = value;
+            throw new ArgumentException("Invalid username", nameof(value));
         }
-
-        public override string ToString() => Value;
+        this.Value = value;
     }
+
+    public override string ToString() => Value;
 }

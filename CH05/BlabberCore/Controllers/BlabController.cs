@@ -2,32 +2,31 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Blabber.Controllers
+namespace Blabber.Controllers;
+
+public class BlabController : Controller
 {
-    public class BlabController : Controller
+    private readonly BlabStorage storage;
+
+    public BlabController(BlabStorage storage)
     {
-        private readonly BlabStorage storage;
+        this.storage = storage;
+    }
 
-        public BlabController(BlabStorage storage)
+    private ActionResult home()
+    {
+        return RedirectToAction("Index", "Home");
+    }
+
+    public ActionResult Post(BlabForm form)
+    {
+        if (!ModelState.IsValid)
         {
-            this.storage = storage;
-        }
-
-        private ActionResult home()
-        {
-            return RedirectToAction("Index", "Home");
-        }
-
-        public ActionResult Post(BlabForm form)
-        {
-            if (!ModelState.IsValid)
-            {
-                return home();
-            }
-
-            var blab = new Blab(form.Content, DateTimeOffset.Now);
-            storage.Add(blab);
             return home();
         }
+
+        var blab = new Blab(form.Content, DateTimeOffset.Now);
+        storage.Add(blab);
+        return home();
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace Arrays
+namespace Arrays;
+
+internal static class Program
 {
-    internal static class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            Console.WriteLine(Arrays.ArrayVsList());
-        }
+        Console.WriteLine(Arrays.ArrayVsList());
     }
 }

@@ -1,6 +1,5 @@
-﻿namespace HttpHandler
+﻿namespace HttpHandler;
+
+public class Handler
 {
-    public class Handler
-    {
-    }
 }

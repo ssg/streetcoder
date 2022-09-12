@@ -5,23 +5,22 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Connections {
-  class CpuBound {
-    public async Task LongWork() {
-      await Task.Run(() => computeMeaningOfLifeUniverseAndEverything());
-    }
+namespace Connections; 
+class CpuBound {
+public async Task LongWork() {
+  await Task.Run(() => computeMeaningOfLifeUniverseAndEverything());
+}
 
 private ManualResetEvent completionEvent = new(initialState: false);
 public void LongWorkThread() {
-  ThreadPool.QueueUserWorkItem(state => {
-    computeMeaningOfLifeUniverseAndEverything();
-    completionEvent.Set();
-  });
-  completionEvent.WaitOne();
+ThreadPool.QueueUserWorkItem(state => {
+computeMeaningOfLifeUniverseAndEverything();
+completionEvent.Set();
+});
+completionEvent.WaitOne();
 }
 
-    private void computeMeaningOfLifeUniverseAndEverything() {
-      throw new NotImplementedException();
-    }
-  }
+private void computeMeaningOfLifeUniverseAndEverything() {
+  throw new NotImplementedException();
+}
 }

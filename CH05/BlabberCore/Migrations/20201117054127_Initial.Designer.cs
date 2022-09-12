@@ -6,37 +6,36 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Blabber.Migrations
+namespace Blabber.Migrations;
+
+[DbContext(typeof(BlabberContext))]
+[Migration("20201117054127_Initial")]
+partial class Initial
 {
-    [DbContext(typeof(BlabberContext))]
-    [Migration("20201117054127_Initial")]
-    partial class Initial
+    protected override void BuildTargetModel(ModelBuilder modelBuilder)
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("ProductVersion", "5.0.0");
+        modelBuilder
+            .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Blabber.DB.BlabEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+        modelBuilder.Entity("Blabber.DB.BlabEntity", b =>
+            {
+                b.Property<Guid>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("TEXT");
 
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasMaxLength(560)
-                        .HasColumnType("TEXT");
+                b.Property<string>("Content")
+                    .IsRequired()
+                    .HasMaxLength(560)
+                    .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("TEXT");
+                b.Property<DateTime>("CreatedOn")
+                    .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Blabs");
-                });
+                b.ToTable("Blabs");
+            });
 #pragma warning restore 612, 618
-        }
     }
 }

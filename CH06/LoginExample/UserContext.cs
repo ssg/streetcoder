@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace LoginExample
-{
-    public class UserContext : DbContext
-    {
-        public DbSet<UserEntity> Users { get; set; } = null!;
+namespace LoginExample;
 
-        public UserContext() : base()
-        {
-        }
+public class UserContext : DbContext
+{
+    public DbSet<UserEntity> Users { get; set; } = null!;
+
+    public UserContext() : base()
+    {
     }
 }

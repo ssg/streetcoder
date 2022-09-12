@@ -42,13 +42,13 @@ dotnet_diagnostic.IDE0044.severity = silent
 dotnet_diagnostic.IDE0090.severity = silent
 
 # actual nice code formatting rules (Allman style)
-[*.csxx]
+[*.cs]
 csharp_new_line_before_open_brace = all
 indent_size = 4
 
 # book formatting rules (K&R) to save space 
 
-[*.cs]
+[*.csxx]
 csharp_new_line_before_open_brace = none
 indent_size = 2
 

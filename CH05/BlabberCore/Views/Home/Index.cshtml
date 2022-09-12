@@ -15,11 +15,11 @@
 
 <div>
     @if (Model?.Blabs is null || !(Model.Blabs.Any()))
-    {
-        <p>No blabs yet!</p>
-    }
-    else
-    {
-        @Html.DisplayFor(m => m.Blabs)
-    }
+{
+    <p>No blabs yet!</p>
+}
+else
+{
+    @Html.DisplayFor(m => m.Blabs)
+}
 </div>

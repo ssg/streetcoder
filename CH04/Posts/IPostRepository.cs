@@ -1,11 +1,10 @@
 ﻿using System.Linq;
 
-namespace Posts
-{
-    public interface IPostRepository
-    {
-        IQueryable<Tag> GetTrendingTagTable();
+namespace Posts;
 
-        IQueryable<Tag> GetYesterdaysTrendingTagTable();
-    }
+public interface IPostRepository
+{
+    IQueryable<Tag> GetTrendingTagTable();
+
+    IQueryable<Tag> GetYesterdaysTrendingTagTable();
 }

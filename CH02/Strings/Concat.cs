@@ -1,7 +1,6 @@
-﻿namespace Strings {
-  class Concat {
+﻿namespace Strings; 
+class Concat {
 public string ConcatName(string firstName, string middleName, string lastName) {
-  return firstName + " " + middleName + " " + lastName;
+return firstName + " " + middleName + " " + lastName;
 }
-  }
 }

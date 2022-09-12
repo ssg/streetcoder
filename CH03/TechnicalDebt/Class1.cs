@@ -1,9 +1,8 @@
 ﻿using System;
 
-namespace TechnicalDebt
+namespace TechnicalDebt;
+
+public interface ICache
 {
-    public interface ICache
-    {
-        T Get<T>(string key, Func<T> retrievalCode, TimeSpan expiresIn);
-    }
+    T Get<T>(string key, Func<T> retrievalCode, TimeSpan expiresIn);
 }

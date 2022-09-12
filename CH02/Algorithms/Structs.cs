@@ -1,29 +1,28 @@
 ﻿using System;
 
-namespace Algorithms
+namespace Algorithms;
+
+internal class Structs
 {
-    internal class Structs
+    private struct Point
     {
-        private struct Point
-        {
-            public int X;
-            public int Y;
+        public int X;
+        public int Y;
 
-            public override string ToString() => $"X:{X},Y:{Y}";
-        }
+        public override string ToString() => $"X:{X},Y:{Y}";
+    }
 
-        public static void Main()
+    public static void Main()
+    {
+        var a = new Point()
         {
-            var a = new Point()
-            {
-                X = 5,
-                Y = 5,
-            };
-            var b = a;
-            b.X = 100;
-            b.Y = 200;
-            Console.WriteLine(b);
-            Console.WriteLine(a);
-        }
+            X = 5,
+            Y = 5,
+        };
+        var b = a;
+        b.X = 100;
+        b.Y = 200;
+        Console.WriteLine(b);
+        Console.WriteLine(a);
     }
 }
