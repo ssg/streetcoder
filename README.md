@@ -10,7 +10,7 @@ published by Manning Publications.
 
 # requirements
 
-Almost all projects target .NET 6. They targeted .NET 5 before, but .NET 5 support 
+Almost all projects target .NET 6. They targeted .NET 5 originally, but .NET 5 support 
 ended in early 2022. With .NET 6 support, you can build the projects using current 
 tools with as little installation work and warnings as possible. 
 The source code is still in parity with the book. I plan on maintaining 
