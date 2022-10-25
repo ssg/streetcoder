@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
 namespace IO;
+
 public partial class FileCopy
 {
     public static void Copy(string sourceFilename,
       string destinationFilename)
     {
-
         using var inputStream = File.OpenRead(sourceFilename);
         using var outputStream = File.Create(destinationFilename);
         while (true)
