@@ -4,13 +4,6 @@ namespace Arrays;
 
 public class Arrays
 {
-    public string[] UserNames { get; set; }
-
-    public void Mutate()
-    {
-        UserNames[0] = "root";
-    }
-
     public static int ArrayVsList()
     {
         var a = new int[] { 1, 2, 3, 4 };
