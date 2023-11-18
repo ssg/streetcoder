@@ -49,19 +49,18 @@ public partial class FileCopy
         var buffer = new byte[bufferSize];
         while (true)
         {
-            int readBytes = await inputStream.ReadAsync(buffer, 0, bufferSize);
+            int readBytes = await inputStream.ReadAsync(buffer.AsMemory(0, bufferSize));
             if (readBytes == 0)
             {
                 break;
             }
-            await outputStream.WriteAsync(buffer, 0, readBytes);
+            await outputStream.WriteAsync(buffer.AsMemory(0, readBytes));
         }
     }
 
     public static Task CopyAsyncOld(string sourceFilename,
-    string destinationFilename, int bufferSize)
+        string destinationFilename, int bufferSize)
     {
-
         var inputStream = File.OpenRead(sourceFilename);
         var outputStream = File.Create(destinationFilename);
 
@@ -90,7 +89,7 @@ public partial class FileCopy
         }
 
         var result = inputStream.BeginRead(buffer, 0, bufferSize,
-        onRead, null);
-        return Task.WhenAll(onComplete);
+            onRead, null);
+        return onComplete;
     }
 }

@@ -68,7 +68,7 @@ public class Luhn
     private static int charToInt(char c)
     {
         int result = c - '0';
-        if (result < 0 || result > 9)
+        if (result is < 0 or > 9)
         {
             return -1;
         }
@@ -78,8 +78,7 @@ public class Luhn
 
 public class LuhnBenchmark
 {
-    [Params("12345678901234567890")]
-    public string Number;
+    public string Number = "12345678901234567890";
 
     [Benchmark]
     public bool CheckNaive()

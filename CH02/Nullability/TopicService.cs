@@ -12,21 +12,12 @@ public interface IUser
     bool Authorized(string role);
 }
 
-public class TopicService
+public class TopicService(IDatabase db, IUser user)
 {
-    private IDatabase db;
-    private IUser user;
-
     public MoveResult MoveContents(TopicId from, TopicId to)
     {
-        if (from is null)
-        {
-            throw new ArgumentNullException(nameof(from));
-        }
-        if (to is null)
-        {
-            throw new ArgumentNullException(nameof(to));
-        }
+        ArgumentNullException.ThrowIfNull(from);
+        ArgumentNullException.ThrowIfNull(to);
         if (!user.Authorized("move_contents"))
         {
             return MoveResult.Unauthorized;

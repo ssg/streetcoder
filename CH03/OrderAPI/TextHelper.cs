@@ -8,7 +8,7 @@ public static class TextHelper
         {
             return text;
         }
-        return Char.ToUpper(text[0]) + text.Substring(1).ToLower();
+        return Char.ToUpper(text[0]) + text[1..].ToLower();
     }
 
     public static string Capitalize(string text,
@@ -20,7 +20,7 @@ public static class TextHelper
         }
         if (!everyWord)
         {
-            return Char.ToUpper(text[0]) + text.Substring(1).ToLower();
+            return char.ToUpper(text[0]) + text[1..].ToLower();
         }
         string[] words = text.Split(' ');
         for (int i = 0; i < words.Length; i++)
@@ -42,9 +42,9 @@ public static class TextHelper
             if (filename)
             {
                 return Char.ToUpperInvariant(text[0])
-                  + text.Substring(1).ToLowerInvariant();
+                  + text[1..].ToLowerInvariant();
             }
-            return Char.ToUpper(text[0]) + text.Substring(1).ToLower();
+            return char.ToUpper(text[0]) + text[1..].ToLower();
         }
         string[] words = text.Split(' ');
         for (int i = 0; i < words.Length; i++)
@@ -65,7 +65,7 @@ public static class TextHelper
         {
             return text.ToUpper();
         }
-        return Char.ToUpper(text[0]) + text.Substring(1).ToLower();
+        return Char.ToUpper(text[0]) + text[1..].ToLower();
     }
 
     public static string CapitalizeEveryWord(string text)
@@ -91,7 +91,7 @@ public static class TextHelper
             else
             {
                 words[n] = Char.ToUpperInvariant(word[0]) +
-                  word.Substring(1).ToLowerInvariant();
+                  word[1..].ToLowerInvariant();
             }
         }
         return String.Join("_", words);

@@ -1,11 +1,11 @@
-﻿public class Person
+﻿public class Person(int id, string firstName, string lastName, string city, IDatabase db)
 {
-    public int Id { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string City { get; set; }
+    public int Id { get; set; } = id;
+    public string FirstName { get; set; } = firstName;
+    public string LastName { get; set; } = lastName;
+    public string City { get; set; } =  city;
 
-    private readonly IDatabase db;
+    private readonly IDatabase db = db;
 
     public enum UpdateResult
     {

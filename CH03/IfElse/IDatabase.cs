@@ -1,4 +1,4 @@
-﻿internal interface IDatabase
+﻿public interface IDatabase
 {
     string GetCurrentCityByName(string normalizedFirstName, string normalizedLastName);
 

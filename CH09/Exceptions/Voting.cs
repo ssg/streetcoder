@@ -2,6 +2,7 @@
 using System;
 
 namespace Exceptions;
+
 public enum VotingResult
 {
     Success,
@@ -9,9 +10,9 @@ public enum VotingResult
     ContentDeleted,
 }
 
-public class Voting : Controller
+public class Voting(IDatabase db) : Controller
 {
-    private readonly IDatabase db;
+    private readonly IDatabase db = db;
 
     [HttpPost]
     public IActionResult Upvote(Guid contentId)

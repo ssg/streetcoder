@@ -5,15 +5,8 @@ using System.Linq;
 
 namespace Blabber.DB;
 
-public class BlabDb : IBlabDb
+public class BlabDb(BlabberContext db) : IBlabDb
 {
-    private readonly BlabberContext db;
-
-    public BlabDb(BlabberContext db)
-    {
-        this.db = db;
-    }
-
     public void AddBlab(Blab blab)
     {
         db.Blabs.Add(new BlabEntity()

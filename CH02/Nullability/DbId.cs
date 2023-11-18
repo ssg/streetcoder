@@ -6,21 +6,18 @@ public class DbId : IEquatable<DbId>
 
     public DbId(int id)
     {
-        if (id <= 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(id));
-        }
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(id);
         Value = id;
     }
 
     public override string ToString() => Value.ToString();
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         return Equals(obj as DbId);
     }
 
-    public bool Equals(DbId other) => other?.Value == Value;
+    public bool Equals(DbId? other) => other?.Value == Value;
 
     public override int GetHashCode()
     {
@@ -38,23 +35,14 @@ public class DbId : IEquatable<DbId>
     }
 }
 
-public class EntryId : DbId
+public class EntryId(int id) : DbId(id)
 {
-    public EntryId(int id) : base(id)
-    {
-    }
 }
 
-public class TopicId : DbId
+public class TopicId(int id) : DbId(id)
 {
-    public TopicId(int id) : base(id)
-    {
-    }
 }
 
-public class UserId : DbId
+public class UserId(int id) : DbId(id)
 {
-    public UserId(int id) : base(id)
-    {
-    }
 }

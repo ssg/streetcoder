@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Twitter
+public class Twitter(TwitterAccessToken accessToken)
 {
     public static Uri GetAuthorizationUrl(Uri callbackUrl)
     {
@@ -17,15 +17,11 @@ public class Twitter
         return new TwitterAccessToken();
     }
 
-    public Twitter(TwitterAccessToken accessToken)
-    {
-        // we should store this somewhere
-    }
-
     public IEnumerable<TwitterUserId> GetListOfFollowers(
       TwitterUserId userId)
     {
         // no idea how this will work
+        _ = accessToken; // access the access token
         yield break;
     }
 }

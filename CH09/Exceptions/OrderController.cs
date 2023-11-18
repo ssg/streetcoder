@@ -17,9 +17,9 @@ public class Order
     public DateTimeOffset LastUpdate { get; set; }
 }
 
-class OrderController : Controller
+class OrderController(IDatabase db) : Controller
 {
-    private readonly IDatabase db;
+    private readonly IDatabase db = db;
 
     private static readonly TimeSpan orderTimeout = TimeSpan.FromSeconds(30);
 
@@ -68,12 +68,12 @@ class OrderController : Controller
         return true;
     }
 
-    private IActionResult orderStatusView(Order order)
+    private ViewResult orderStatusView(Order order)
     {
         return View("OrderStatus", order);
     }
 
-    private IActionResult redirectToResultPage(Order order)
+    private RedirectToActionResult redirectToResultPage(Order order)
     {
         return RedirectToAction("Result", new { orderId = order.Id });
     }

@@ -1,14 +1,10 @@
 ﻿using System.Collections.Generic;
 
 namespace Connections;
-class LimitedList<T>
-{
-    private List<T> items = new();
 
-    public LimitedList(int limit)
-    {
-        Limit = limit;
-    }
+class LimitedList<T>(int limit)
+{
+    private List<T> items = [];
 
     public bool Add(T item)
     {
@@ -36,5 +32,5 @@ class LimitedList<T>
     }
 
     public int Count => items.Count;
-    public int Limit { get; }
+    public int Limit { get; } = limit;
 }

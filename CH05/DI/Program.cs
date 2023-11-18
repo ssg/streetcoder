@@ -9,15 +9,8 @@ public interface IB
     void Y();
 }
 
-public class A
+public class A(IB b)
 {
-    private readonly IB b;
-
-    public A(IB b)
-    {
-        this.b = b;
-    }
-
     public void X()
     {
         Console.WriteLine("X got called");

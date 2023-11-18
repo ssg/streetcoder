@@ -12,7 +12,6 @@ public sealed class AsyncCounter : IDisposable
     public void Dispose()
     {
         semaphore?.Dispose();
-        semaphore = null;
     }
 
     public async Task<int> GetNextValue()

@@ -2,15 +2,8 @@
 
 namespace LoginExample;
 
-public class User
+public class User(SqlConnection db)
 {
-    private readonly SqlConnection db;
-
-    public User(SqlConnection db)
-    {
-        this.db = db;
-    }
-
     public int? GetUserId_naive(string username)
     {
         var cmd = db.CreateCommand();

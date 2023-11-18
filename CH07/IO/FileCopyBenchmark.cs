@@ -10,8 +10,7 @@ public partial class FileCopy
         private string sourceFilename;
         private string destinationFilename;
 
-        [GlobalSetup]
-        public void Setup()
+        public FileCopyBenchmark()
         {
             sourceFilename = Path.GetTempFileName();
             // grow the file

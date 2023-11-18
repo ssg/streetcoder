@@ -4,23 +4,13 @@ using System.Linq;
 
 namespace Blabber.Controllers;
 
-public class HomeController : Controller
+public class HomeController(BlabStorage storage) : Controller
 {
-    private static readonly HomepageModel defaultHomepageModel = new HomepageModel
+    private static readonly HomepageModel defaultHomepageModel = new()
     {
         Blabs = Enumerable.Empty<Blab>(),
-        Form = new BlabForm()
-        {
-            Content = null,
-        }
+        Form = new BlabForm(),
     };
-
-    private readonly BlabStorage storage;
-
-    public HomeController(BlabStorage storage)
-    {
-        this.storage = storage;
-    }
 
     public ActionResult Index()
     {
@@ -32,14 +22,12 @@ public class HomeController : Controller
     public ActionResult About()
     {
         ViewBag.Message = "Your application description page.";
-
         return View();
     }
 
     public ActionResult Contact()
     {
         ViewBag.Message = "Your contact page.";
-
         return View();
     }
 }

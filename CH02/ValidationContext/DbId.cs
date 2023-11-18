@@ -6,10 +6,7 @@ public class DbId
 
     public DbId(int id)
     {
-        if (id <= 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(id));
-        }
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(id);
         Value = id;
     }
 
@@ -17,7 +14,7 @@ public class DbId
 
     public override int GetHashCode() => Value;
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         return obj is DbId other && other.Value == Value;
     }
@@ -32,24 +29,15 @@ public class DbId
         return !a.Equals(b);
     }
 
-    public class PostId : DbId
+    public class PostId(int id) : DbId(id)
     {
-        public PostId(int id) : base(id)
-        {
-        }
     }
 
-    public class TopicId : DbId
+    public class TopicId(int id) : DbId(id)
     {
-        public TopicId(int id) : base(id)
-        {
-        }
     }
 
-    public class UserId : DbId
+    public class UserId(int id) : DbId(id)
     {
-        public UserId(int id) : base(id)
-        {
-        }
     }
 }

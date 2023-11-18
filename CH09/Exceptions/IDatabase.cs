@@ -1,7 +1,8 @@
 ﻿using System;
 
 namespace Exceptions;
-internal interface IDatabase
+
+public interface IDatabase
 {
     Order GetOrder(Guid orderId);
     void ChangeOrderStatus(Order order, OrderStatus newState);

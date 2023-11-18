@@ -14,7 +14,7 @@ internal class Program
     }
 
     // URL format is https://supercalifragilisticexpialidocious.io/<shortcode>
-    public string GetShortCodeStr(string url)
+    public string? GetShortCodeStr(string url)
     {
         const string urlValidationPattern = @"^https?://([\w-]+.)+[\w-]+(/[\w- ./?%&=])?$";
         if (!Regex.IsMatch(url, urlValidationPattern))
@@ -28,7 +28,7 @@ internal class Program
     }
 
     // URL format is https://supercalifragilisticexpialidocious.io/<shortcode>
-    public string GetShortCodeUri(Uri url)
+    public string? GetShortCodeUri(Uri url)
     {
         string path = url.AbsolutePath;
         if (path.Contains('/'))
@@ -38,9 +38,9 @@ internal class Program
         return path;
     }
 
-    public void IPLoopback()
+    public static void IPLoopback()
     {
-        var testAddress = IPAddress.Loopback;
+        _ = IPAddress.Loopback;
     }
 
     public void BirthDateCalculator()

@@ -2,10 +2,9 @@
 using System.Linq;
 
 namespace Patterns;
-public class User
-{
-    private IDb db;
 
+public class User(IDb db)
+{
     public IEnumerable<string> GetBadgeNames()
     {
         var badges = db.GetBadges();

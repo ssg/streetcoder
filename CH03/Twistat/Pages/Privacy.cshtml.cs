@@ -3,16 +3,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Twistat.Pages;
 
-public class PrivacyModel : PageModel
+public class PrivacyModel(ILogger<PrivacyModel> logger) : PageModel
 {
-    private readonly ILogger<PrivacyModel> logger;
-
-    public PrivacyModel(ILogger<PrivacyModel> logger)
-    {
-        this.logger = logger;
-    }
-
     public void OnGet()
     {
+        logger.LogDebug("GET request received");
     }
 }

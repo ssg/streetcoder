@@ -9,7 +9,7 @@ internal class Structs
         public int X;
         public int Y;
 
-        public override string ToString() => $"X:{X},Y:{Y}";
+        public override readonly string? ToString() => $"X:{X},Y:{Y}";
     }
 
     public static void Main()

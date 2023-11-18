@@ -5,13 +5,8 @@ using System.Linq;
 
 namespace Blabber.DB;
 
-public class BlabberContext : DbContext
+public class BlabberContext(DbContextOptions<BlabberContext> options) : DbContext(options)
 {
-    public BlabberContext(DbContextOptions<BlabberContext> options)
-      : base(options)
-    {
-    }
-
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

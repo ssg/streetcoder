@@ -4,19 +4,13 @@ using Microsoft.Extensions.Logging;
 
 namespace FoobleXSS.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel(ILogger<IndexModel> logger) : PageModel
 {
-    private readonly ILogger<IndexModel> logger;
-
     public string? Query { get; set; }
-
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        this.logger = logger;
-    }
 
     public void OnGet([Bind(Prefix = "q")] string? query)
     {
+        logger.LogDebug("Received GET request");
         this.Query = query;
     }
 }

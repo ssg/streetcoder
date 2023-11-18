@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 
 namespace Patterns;
-public class Badge
-{
-    public string Name;
-    public int Level;
 
+public record Badge(string Name, int Level)
+{
     private static ISet<string> visibleBadgeNames = getVisibleBadgeNames();
 
     public bool IsVisible

@@ -4,16 +4,9 @@ using System;
 
 namespace Blabber.Controllers;
 
-public class BlabController : Controller
+public class BlabController(BlabStorage storage) : Controller
 {
-    private readonly BlabStorage storage;
-
-    public BlabController(BlabStorage storage)
-    {
-        this.storage = storage;
-    }
-
-    private ActionResult home()
+    private RedirectToActionResult home()
     {
         return RedirectToAction("Index", "Home");
     }
@@ -25,7 +18,7 @@ public class BlabController : Controller
             return home();
         }
 
-        var blab = new Blab(form.Content, DateTimeOffset.Now);
+        var blab = new Blab(form.Content!, DateTimeOffset.Now);
         storage.Add(blab);
         return home();
     }

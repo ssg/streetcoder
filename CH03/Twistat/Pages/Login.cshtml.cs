@@ -5,19 +5,12 @@ using Microsoft.Extensions.Configuration;
 
 namespace Twistat.Pages;
 
-public class LoginModel : PageModel
+public class LoginModel(IConfiguration configuration) : PageModel
 {
-    private readonly IConfiguration config;
-
-    public LoginModel(IConfiguration configuration)
-    {
-        this.config = configuration;
-    }
-
     public IActionResult OnGet()
     {
-        string consumerKey = config["Twitter:ConsumerKey"];
-        string consumerSecret = config["Twitter:ConsumerSecret"];
+        string consumerKey = configuration["Twitter:ConsumerKey"]!;
+        string consumerSecret = configuration["Twitter:ConsumerSecret"]!;
         var session = OAuth.Authorize(consumerKey, consumerSecret,
           oauthCallback: $"{Request.Scheme}://{Request.Host}/Callback");
         TempData["session"] = session;

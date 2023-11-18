@@ -3,19 +3,16 @@
 namespace Connections;
 public class Cache
 {
-    private static object instanceLock = new object();
-    private static Cache instance;
+    private static object instanceLock = new();
+    private static Cache? instance;
+
     public static Cache Instance
     {
         get
         {
             lock (instanceLock)
             {
-                if (instance is null)
-                {
-                    instance = new Cache();
-                }
-                return instance;
+                return instance ??= new Cache();
             }
         }
     }
@@ -28,22 +25,13 @@ public class Cache
                 return instance;
             }
             lock (instanceLock)
-            {
-                if (instance is null)
-                {
-                    instance = new Cache();
-                }
-                return instance;
+            {                
+                return instance ??= new Cache();
             }
         }
     }
 
-    public static Cache Instance3
-    {
-        get
-        {
-            return LazyInitializer.EnsureInitialized(ref instance);
-        }
-    }
+    public static Cache Instance3 
+        => LazyInitializer.EnsureInitialized(ref instance);
 }
 

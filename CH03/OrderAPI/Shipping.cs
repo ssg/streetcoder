@@ -1,23 +1,21 @@
 ﻿using System;
 
-public class Shipping
+public class Shipping(IDatabase db)
 {
-    private readonly IDatabase db;
-
     public void SetShippingAddress(Guid customerId,
         PostalAddress newAddress)
     {
-        normalizeFields(newAddress);
+        NormalizeFields(newAddress);
         db.UpdateShippingAddress(customerId, newAddress);
     }
 
-    private void normalizeFields(PostalAddress address)
+    protected static void NormalizeFields(PostalAddress address)
     {
         address.FirstName = TextHelper.Capitalize(address.FirstName);
         address.LastName = TextHelper.Capitalize(address.LastName);
     }
 
-    private void normalizeFields2(PostalAddress address)
+    protected static void NormalizeFields2(PostalAddress address)
     {
         address.FirstName = TextHelper.Capitalize(address.FirstName);
         address.LastName = TextHelper.Capitalize(address.LastName);
@@ -25,7 +23,7 @@ public class Shipping
     }
 }
 
-internal interface IDatabase
+public interface IDatabase
 {
     void UpdateShippingAddress(Guid customerId, PostalAddress newAddress);
 }

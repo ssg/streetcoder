@@ -6,10 +6,7 @@ public class PostId : IEquatable<PostId>
 
     public PostId(int id)
     {
-        if (id <= 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(id));
-        }
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(id);
         Value = id;
     }
 
@@ -17,12 +14,12 @@ public class PostId : IEquatable<PostId>
 
     public override int GetHashCode() => Value;
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         return Equals(obj as PostId);
     }
 
-    public bool Equals(PostId other) => other?.Value == Value;
+    public bool Equals(PostId? other) => other?.Value == Value;
 
     public static bool operator ==(PostId a, PostId b)
     {

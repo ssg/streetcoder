@@ -1,6 +1,4 @@
-﻿using BenchmarkDotNet.Running;
-
-namespace Patterns;
+﻿namespace Patterns;
 public struct UserPreferences
 {
     public byte ItemsPerPage;

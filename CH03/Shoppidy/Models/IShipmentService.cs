@@ -1,4 +1,4 @@
-﻿internal interface IShipmentService
+﻿public interface IShipmentService
 {
     ShippingFormValidationResult ValidateShippingForm(ShipmentAddress form);
     bool SaveShippingInfo(ShipmentAddress form);

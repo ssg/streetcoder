@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Connections;
@@ -15,7 +13,7 @@ static class Program
         var result = await ParallelWeb.DownloadAll(uriArgs);
         foreach (var pair in result)
         {
-            Console.WriteLine($"{pair.Key,-40}: {pair.Value.Substring(0, 40)}...");
+            Console.WriteLine($"{pair.Key,-40}: {pair.Value[..40]}...");
         }
     }
 }

@@ -2,13 +2,13 @@
 
 public class ShipmentAddress
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Address1 { get; set; }
-    public string Address2 { get; set; }
-    public string City { get; set; }
+    public required string FirstName { get; set; }
+    public required string LastName { get; set; }
+    public required string Address1 { get; set; }
+    public required string Address2 { get; set; }
+    public required string City { get; set; }
 
     [RegularExpression(@"^\s*\d{5}(-\d{4})?\s*$")]
-    public string ZipCode { get; set; }
+    public required string ZipCode { get; set; }
 
 }

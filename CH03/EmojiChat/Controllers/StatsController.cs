@@ -9,20 +9,13 @@ public class UserStats
 }
 
 [Route("stats/{action}")]
-public class StatsController : ControllerBase
+public class StatsController(IConfiguration config) : ControllerBase
 {
-    private readonly IConfiguration config;
-
-    public StatsController(IConfiguration config)
-    {
-        this.config = config;
-    }
-
     [HttpGet]
     public UserStats Get(int userId)
     {
         var result = new UserStats();
-        string connectionString = config.GetConnectionString("DB");
+        string connectionString = config.GetConnectionString("DB")!;
         using (var conn = new SqlConnection(connectionString))
         {
             conn.Open();

@@ -10,7 +10,7 @@ internal class UsernameTest
     public void ctor_nullUsername_ThrowsArgumentNullException()
     {
         Assert.Throws<ArgumentNullException>(
-          () => new Username(null));
+          () => new Username(null!));
     }
 
     [TestCase("")]

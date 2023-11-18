@@ -1,16 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Connections;
-public class ConnectionPooling
+
+public class ConnectionPooling(IDummyDbContext context)
 {
-    private MySqlConnection customerConnection;
+    private MySqlConnection? customerConnection;
     private const string connectionString = "Some Connection String";
-    private IDummyDbContext context;
+    private IDummyDbContext context = context;
 
     public void UpdateCustomerPreferences(string name, string prefs)
     {
@@ -82,7 +80,7 @@ public class ConnectionPooling
     }
 }
 
-internal interface IDummyDbContext
+public interface IDummyDbContext
 {
     public IQueryable<Customer> Customers { get; }
     public IQueryable<CustomerPreference> CustomerPrefs { get; }
@@ -90,14 +88,14 @@ internal interface IDummyDbContext
     void SaveChanges();
 }
 
-public class CustomerPreference
+public class CustomerPreference(int customerId, string prefs)
 {
-    public int CustomerId { get; set; }
-    public string Prefs { get; set; }
+    public int CustomerId { get; set; } = customerId;
+    public string Prefs { get; set; } = prefs;
 }
 
-public class Customer
+public class Customer(string name, int id)
 {
-    public string Name { get; set; }
-    public int Id { get; set; }
+    public string Name { get; set; } = name;
+    public int Id { get; set; } = id;
 }

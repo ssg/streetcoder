@@ -1,10 +1,9 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
 
 namespace Patterns;
 public class ChecksumBenchmark
 {
-    public byte[] InitBuffer => getBuffer();
+    public static byte[] InitBuffer => getBuffer();
 
     private static byte[] getBuffer()
     {

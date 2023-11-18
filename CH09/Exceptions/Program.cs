@@ -41,10 +41,10 @@ class Program
     }
 
     private const string updateServerUriPrefix =
-      "https://streetcoder.org/selfupdate/";
+        "https://streetcoder.org/selfupdate/";
 
     private static readonly string[] updateFiles =
-      new[] { "Exceptions.exe", "Exceptions.app.config" };
+        ["Exceptions.exe", "Exceptions.app.config"];
 
     private static bool downloadFiles(string directory,
       IEnumerable<string> files)

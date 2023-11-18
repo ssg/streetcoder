@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Connections;
 class ApiTokens
 {
-    private Dictionary<string, Token> tokens { get; } = new();
+    private Dictionary<string, Token> tokens { get; } = [];
 
     public void Set(string key, Token value)
     {
@@ -18,7 +18,7 @@ class ApiTokens
     {
         lock (tokens)
         {
-            if (!tokens.TryGetValue(key, out Token value))
+            if (!tokens.TryGetValue(key, out Token? value))
             {
                 value = getTokenFromDb(key);
                 tokens[key] = value;

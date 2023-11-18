@@ -10,23 +10,19 @@ public class Username
 
     public Username(string username)
     {
-        if (username is null)
-        {
-            throw new ArgumentNullException(nameof(username));
-        }
+        ArgumentNullException.ThrowIfNull(username);
         if (!Regex.IsMatch(username, validUsernamePattern))
         {
-            throw new ArgumentException(nameof(username),
-              "Invalid username");
+            throw new ArgumentException("Invalid username", nameof(username));
         }
         this.Value = username;
     }
 
-    public override string ToString() => base.ToString();
+    public override string? ToString() => base.ToString();
 
     public override int GetHashCode() => Value.GetHashCode();
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         return obj is Username other && other.Value == Value;
     }

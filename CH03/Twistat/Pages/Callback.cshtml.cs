@@ -7,12 +7,12 @@ namespace Twistat.Pages;
 
 public class CallbackModel : PageModel
 {
-    public IEnumerable<string> Nicks { get; set; }
+    public required IEnumerable<string> Nicks { get; set; }
 
     public void OnGet()
     {
         // https://localhost:44304/Callback?oauth_token=XhaguQAAAAABFEzEAAABcqR3JuQ&oauth_verifier=focVY8eYIvceblH3rNtPRNrEOtOUP0Pv
-        var session = (OAuth.OAuthSession)TempData["session"];
+        var session = TempData["session"] as OAuth.OAuthSession;
         session.GetTokens(Request.Query["oauth_verifier"].First());
         var tokens = new Tokens()
         {

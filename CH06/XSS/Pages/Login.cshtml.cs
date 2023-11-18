@@ -37,8 +37,8 @@ public class LoginModel : PageModel
             return;
         }
 
-        var inputHash = hashPassword(password, dbHash.Salt);
-        if (compareBytesSafe(dbHash.Hash, inputHash.Hash))
+        var inputHash = HashPassword(password, dbHash.Salt);
+        if (CompareBytesSafe(dbHash.Hash, inputHash.Hash))
         {
             ErrorMessage = invalidLoginMessage;
             return;
@@ -48,7 +48,7 @@ public class LoginModel : PageModel
         // authorization cookie etc.
     }
 
-    private static bool compareBytes(byte[] a, byte[] b)
+    protected bool CompareBytes(byte[] a, byte[] b)
     {
         if (a.Length != b.Length)
         {
@@ -64,7 +64,7 @@ public class LoginModel : PageModel
         return true;
     }
 
-    private static byte[] getRandomBytes(int length)
+    protected byte[] GetRandomBytes(int length)
     {
         var result = new byte[length];
         using var generator = RandomNumberGenerator.Create();
@@ -72,7 +72,7 @@ public class LoginModel : PageModel
         return result;
     }
 
-    private static bool compareBytesSafe(byte[] a, byte[] b)
+    protected bool CompareBytesSafe(byte[] a, byte[] b)
     {
         if (a.Length != b.Length)
         {
@@ -90,26 +90,27 @@ public class LoginModel : PageModel
 
     private PasswordHash? getPasswordHashFromDb(string username)
     {
-        return username == "beavis" ? hashPassword("butthead") : null;
+        return username == "beavis" ? HashPassword("butthead") : null;
     }
 
-    private PasswordHash hashPassword(string password)
+    protected PasswordHash HashPassword(string password)
     {
         using var pbkdf2 = new Rfc2898DeriveBytes(password,
-          saltSizeInBytes, iterations);
+          saltSizeInBytes, iterations, HashAlgorithmName.SHA256);
         var hash = pbkdf2.GetBytes(keySizeInBytes);
         return new PasswordHash(hash, pbkdf2.Salt);
     }
 
-    private static PasswordHash getHash(Rfc2898DeriveBytes pbkdf2)
+    protected static PasswordHash GetHash(Rfc2898DeriveBytes pbkdf2)
     {
         var hash = pbkdf2.GetBytes(keySizeInBytes);
         return new PasswordHash(hash, pbkdf2.Salt);
     }
 
-    private PasswordHash hashPassword(string password, byte[] salt)
+    protected PasswordHash HashPassword(string password, byte[] salt)
     {
-        using var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
-        return getHash(pbkdf2);
+        using var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 
+            iterations, HashAlgorithmName.SHA256);
+        return GetHash(pbkdf2);
     }
 }

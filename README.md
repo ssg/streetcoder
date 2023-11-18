@@ -8,6 +8,17 @@ This repository contains the example code snippets
 referenced in my book [Street Coder](https://streetcoder.org)
 published by Manning Publications.
 
+# modern branch
+
+Source code in this "modern" branch is modified to adhere to the latest .NET standards and coding practices, 
+so the readers can get an idea how to apply existing techniques on the newer frameworks.
+
+The main changes are:
+
+- Nullability semantics are adhered in all possible projects. (Not the .NET Framework ones, obviously)
+- Newer language constructs like primary constructors, record types are used as much as possible unless
+  it hinders the message of the code example.
+
 # requirements
 
 Almost all projects target .NET 6. They targeted .NET 5 originally, but .NET 5 support 

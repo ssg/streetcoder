@@ -3,16 +3,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Twistat.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel(ILogger<IndexModel> logger) : PageModel
 {
-    private readonly ILogger<IndexModel> logger;
-
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        this.logger = logger;
-    }
-
     public void OnGet()
     {
+        logger.LogDebug("GET request received");
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 public enum ShippingFormValidationResult
 {
@@ -10,10 +9,8 @@ public enum ShippingFormValidationResult
     ZipCodeDidntMatch,
 }
 
-public class ShipmentFormController : Controller
+public class ShipmentFormController(IShipmentService service) : Controller
 {
-    private IShipmentService service;
-
     public IActionResult Index()
     {
         return View();
@@ -146,7 +143,7 @@ public class ShipmentFormController : Controller
         return validationResult == ShippingFormValidationResult.Valid;
     }
 
-    private IActionResult shippingFormError(ShipmentAddress form = null)
+    private RedirectToActionResult shippingFormError(ShipmentAddress? form = null)
     {
         Response.Cookies.Append("shipping_error", "1");
         return RedirectToAction("Index", "ShippingForm", form);

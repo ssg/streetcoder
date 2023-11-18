@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Connections;
 public class MismatchedPostCount
@@ -12,22 +9,20 @@ public class MismatchedPostCount
     public int ActualCount { get; set; }
 }
 
-class Post
+class Post(IDatabase db)
 {
-    private IDatabase db;
+    private IDatabase db = db;
     private Guid userId;
 
     public Guid UserId { get; set; }
 
     public void AddPost(PostContent content)
     {
-        using (var transaction = db.BeginTransaction())
-        {
-            db.InsertPost(content);
-            int postCount = db.GetPostCount(userId);
-            postCount++;
-            db.UpdatePostCount(userId, postCount);
-        }
+        using var transaction = db.BeginTransaction();
+        db.InsertPost(content);
+        int postCount = db.GetPostCount(userId);
+        postCount++;
+        db.UpdatePostCount(userId, postCount);
     }
 
     public void UpdateAllPostCounts()

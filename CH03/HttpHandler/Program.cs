@@ -38,12 +38,13 @@ Example: tempreader 38.66,-121.4004");
         var client = new RestClient(apiUrl);
         var request = new RestRequest(requestPath);
         var response = client.Get(request);
-        if (response.StatusCode == HttpStatusCode.OK)
+        if (response.StatusCode != HttpStatusCode.OK 
+            || response.Content is null)
         {
-            dynamic obj = JObject.Parse(response.Content);
-            var period = obj.properties.periods[0];
-            return (double)period.temperature;
+            return null;
         }
-        return null;
+        dynamic obj = JObject.Parse(response.Content);
+        var period = obj.properties.periods[0];
+        return (double)period.temperature;
     }
 }

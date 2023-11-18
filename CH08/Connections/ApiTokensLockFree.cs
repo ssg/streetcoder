@@ -13,7 +13,7 @@ class ApiTokensLockFree
 
     public Token Get(string key)
     {
-        if (!tokens.TryGetValue(key, out Token value))
+        if (!tokens.TryGetValue(key, out Token? value))
         {
             value = getTokenFromDb(key);
             tokens[key] = value;

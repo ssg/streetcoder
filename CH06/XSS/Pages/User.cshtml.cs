@@ -24,12 +24,12 @@ public class UserModel : PageModel
         Username = content;
     }
 
-    private bool isUserActive(string _)
+    private static bool isUserActive(string _)
     {
         return false;
     }
 
-    private Range getRowRange(int pageIndex, int pageSize)
+    protected Range GetRowRange(int pageIndex, int pageSize)
     {
         int startRow = (pageIndex - 1) * pageSize;
         int endRow = startRow + pageSize;

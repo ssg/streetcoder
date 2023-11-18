@@ -13,7 +13,7 @@ public class BlabEntity
 
     [StringLength(Blab.MaxContentLength)]
     [Required]
-    public string Content { get; set; }
+    public required string Content { get; set; }
 
     /// <summary>
     /// We store DateTime instead of DateTimeOffset
