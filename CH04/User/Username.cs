@@ -16,8 +16,8 @@ public class Username
         }
         if (!Regex.IsMatch(username, validUsernamePattern))
         {
-            throw new ArgumentException(nameof(username),
-              "Invalid username");
+            throw new ArgumentException("Invalid username", 
+                nameof(username));
         }
         this.Value = username;
     }
