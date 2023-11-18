@@ -96,7 +96,7 @@ public class LoginModel : PageModel
     private PasswordHash hashPassword(string password)
     {
         using var pbkdf2 = new Rfc2898DeriveBytes(password,
-          saltSizeInBytes, iterations);
+          saltSizeInBytes, iterations, HashAlgorithmName.SHA256);
         var hash = pbkdf2.GetBytes(keySizeInBytes);
         return new PasswordHash(hash, pbkdf2.Salt);
     }
@@ -109,7 +109,8 @@ public class LoginModel : PageModel
 
     private PasswordHash hashPassword(string password, byte[] salt)
     {
-        using var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations);
+        using var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 
+            iterations, HashAlgorithmName.SHA256);
         return getHash(pbkdf2);
     }
 }
