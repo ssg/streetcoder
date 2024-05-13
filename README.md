@@ -26,7 +26,7 @@ solution file `streetcoder.sln`.
 
 You can open and build solution and project files using the latest version 
 of [Visual Studio](https://visualstudio.microsoft.com/vs/). The Community Edition of Visual Studio 
-is free for personal use, and it's available on Mac too.
+is free for personal use, ~and it's available on Mac too.~
 
 You can also use [Visual Studio Code](https://code.visualstudio.com/) with 
 [OmniSharp C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) 
