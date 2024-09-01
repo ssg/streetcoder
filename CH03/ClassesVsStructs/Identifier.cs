@@ -2,44 +2,25 @@
 
 namespace Class
 {
-    public class Id
+    public class Id(int value)
     {
-        public int Value { get; private set; }
-
-        public Id(int value)
-        {
-            this.Value = value;
-        }
+        public int Value { get; private set; } = value;
     }
 
-    public class Person
+    public class Person(int id, string firstName, string lastName, string city)
     {
-        public int Id { get; private set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string City { get; private set; }
-
-        public Person(int id, string firstName, string lastName,
-          string city)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            City = city;
-        }
+        public int Id { get; private set; } = id;
+        public string FirstName { get; private set; } = firstName;
+        public string LastName { get; private set; } = lastName;
+        public string City { get; private set; } = city;
     }
 }
 
 namespace Struct
 {
-    public struct Id
+    public struct Id(int value)
     {
-        public int Value { get; private set; }
-
-        public Id(int value)
-        {
-            this.Value = value;
-        }
+        public int Value { get; private set; } = value;
 
         private void testMethod()
         {
@@ -51,20 +32,11 @@ namespace Struct
         }
     }
 
-    public struct Person
+    public struct Person(int id, string firstName, string lastName, string city)
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string City { get; set; }
-
-        public Person(int id, string firstName, string lastName,
-          string city)
-        {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            City = city;
-        }
+        public int Id { get; set; } = id;
+        public string FirstName { get; set; } = firstName;
+        public string LastName { get; set; } = lastName;
+        public string City { get; set; } = city;
     }
 }

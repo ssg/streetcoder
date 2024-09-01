@@ -15,28 +15,19 @@ internal class ConferenceRegistration
 
 #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 
-internal class ConferenceRegistration2
+internal class ConferenceRegistration2(
+    string firstName,
+    string? middleName,
+    string lastName,
+    string email,
+    string? campaignSource = null)
 {
-    public string CampaignSource { get; private set; }
-    public string FirstName { get; private set; }
-    public string? MiddleName { get; private set; }
-    public string LastName { get; private set; }
-    public string Email { get; private set; }
+    public string CampaignSource { get; private set; } = campaignSource ?? "organic";
+    public string FirstName { get; private set; } = firstName;
+    public string? MiddleName { get; private set; } = middleName;
+    public string LastName { get; private set; } = lastName;
+    public string Email { get; private set; } = email;
     public DateTimeOffset CreatedOn { get; private set; } = DateTime.Now;
-
-    public ConferenceRegistration2(
-        string firstName,
-        string? middleName,
-        string lastName,
-        string email,
-        string? campaignSource = null)
-    {
-        FirstName = firstName;
-        MiddleName = middleName;
-        LastName = lastName;
-        Email = email;
-        CampaignSource = campaignSource ?? "organic";
-    }
 }
 
 internal class ConferenceRegistration3

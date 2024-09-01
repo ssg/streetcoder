@@ -9,14 +9,9 @@ public class UserStats
 }
 
 [Route("stats/{action}")]
-public class StatsController : ControllerBase
+public class StatsController(IConfiguration config) : ControllerBase
 {
-    private readonly IConfiguration config;
-
-    public StatsController(IConfiguration config)
-    {
-        this.config = config;
-    }
+    private readonly IConfiguration config = config;
 
     [HttpGet]
     public UserStats Get(int userId)
@@ -35,6 +30,7 @@ public class StatsController : ControllerBase
               "SELECT COUNT(*) FROM Messages WHERE ToId={0}";
             result.Received = (int)cmd.ExecuteScalar();
         }
+
         return result;
     }
 }

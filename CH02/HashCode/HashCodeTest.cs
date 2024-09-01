@@ -2,14 +2,9 @@
 {
     public int Halue { get; set; }
 
-    public override bool Equals(object obj)
-    {
-        return obj is HashCodeTest test &&
+    public override bool Equals(object obj) => 
+        obj is HashCodeTest test &&
                Halue == test.Halue;
-    }
 
-    public override int GetHashCode()
-    {
-        return 387336856 + Halue.GetHashCode();
-    }
+    public override int GetHashCode() => 387336856 + Halue.GetHashCode();
 }

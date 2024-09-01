@@ -17,39 +17,21 @@ public class DbId
 
     public override int GetHashCode() => Value;
 
-    public override bool Equals(object obj)
+    public override bool Equals(object obj) => obj is DbId other && other.Value == Value;
+
+    public static bool operator ==(DbId a, DbId b) => a.Equals(b);
+
+    public static bool operator !=(DbId a, DbId b) => !a.Equals(b);
+
+    public class PostId(int id) : DbId(id)
     {
-        return obj is DbId other && other.Value == Value;
     }
 
-    public static bool operator ==(DbId a, DbId b)
+    public class TopicId(int id) : DbId(id)
     {
-        return a.Equals(b);
     }
 
-    public static bool operator !=(DbId a, DbId b)
+    public class UserId(int id) : DbId(id)
     {
-        return !a.Equals(b);
-    }
-
-    public class PostId : DbId
-    {
-        public PostId(int id) : base(id)
-        {
-        }
-    }
-
-    public class TopicId : DbId
-    {
-        public TopicId(int id) : base(id)
-        {
-        }
-    }
-
-    public class UserId : DbId
-    {
-        public UserId(int id) : base(id)
-        {
-        }
     }
 }

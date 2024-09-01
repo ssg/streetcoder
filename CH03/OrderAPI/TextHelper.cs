@@ -8,6 +8,7 @@ public static class TextHelper
         {
             return text;
         }
+
         return Char.ToUpper(text[0]) + text.Substring(1).ToLower();
     }
 
@@ -27,6 +28,7 @@ public static class TextHelper
         {
             words[i] = Capitalize(words[i]);
         }
+
         return String.Join(" ", words);
     }
 
@@ -56,6 +58,7 @@ public static class TextHelper
         {
             separator = "_";
         }
+
         return String.Join(separator, words);
     }
 
@@ -65,6 +68,7 @@ public static class TextHelper
         {
             return text.ToUpper();
         }
+
         return Char.ToUpper(text[0]) + text.Substring(1).ToLower();
     }
 
@@ -75,6 +79,7 @@ public static class TextHelper
         {
             words[n] = CapitalizeFirstLetter(words[n]);
         }
+
         return String.Join(" ", words);
     }
 
@@ -94,6 +99,7 @@ public static class TextHelper
                   word.Substring(1).ToLowerInvariant();
             }
         }
+
         return String.Join("_", words);
     }
 }

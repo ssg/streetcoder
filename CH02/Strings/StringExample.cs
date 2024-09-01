@@ -12,6 +12,7 @@ public class StringExample
             result += names[i] + ", ";
         }
         result += names[lastIndex];
+
         return result;
     }
 
@@ -25,11 +26,9 @@ public class StringExample
             builder.Append(", ");
         }
         builder.Append(names[lastIndex]);
+
         return builder.ToString();
     }
 
-    public static string JoinNames2(string[] names)
-    {
-        return String.Join(", ", names);
-    }
+    public static string JoinNames2(string[] names) => String.Join(", ", names);
 }

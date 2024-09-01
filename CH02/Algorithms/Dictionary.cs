@@ -6,8 +6,5 @@ public class Birthdate
     public int Month { get; set; }
     public int Day { get; set; }
 
-    public override int GetHashCode()
-    {
-        return 4; // chosen by a fair dice roll
-    }
+    public override int GetHashCode() => 4; // chosen by a fair dice roll
 }
