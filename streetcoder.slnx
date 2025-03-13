@@ -1,0 +1,56 @@
+<Solution>
+  <Folder Name="/CH02/">
+    <Project Path="CH02/Algorithms/Algorithms.csproj" />
+    <Project Path="CH02/Arrays/Arrays.csproj" />
+    <Project Path="CH02/HashCode/HashCode.csproj" />
+    <Project Path="CH02/Nullability/Nullability.csproj" />
+    <Project Path="CH02/ReferenceVsValueTypes/ReferenceVsValueTypes.csproj" />
+    <Project Path="CH02/Strings/Strings.csproj" />
+    <Project Path="CH02/Supercalifragilisticexpialidocious/Supercalifragilisticexpialidocious.csproj" />
+    <Project Path="CH02/ValidationContext/ValidationContext.csproj" />
+  </Folder>
+  <Folder Name="/CH03/">
+    <Project Path="CH03/ClassesVsStructs/ClassesVsStructs.csproj" />
+    <Project Path="CH03/EmojiChat/EmojiChat.csproj" />
+    <Project Path="CH03/HttpHandler/TempReader.csproj" />
+    <Project Path="CH03/IfElse/IfElse.csproj" />
+    <Project Path="CH03/OrderAPI/OrderAPI.csproj" />
+    <Project Path="CH03/Shoppidy/Shoppidy.csproj" />
+    <Project Path="CH03/TechnicalDebt/TechnicalDebt.csproj" />
+    <Project Path="CH03/Twistat/Twistat.csproj" />
+  </Folder>
+  <Folder Name="/CH04/">
+    <Project Path="CH04/DateUtils/DateUtils.csproj" />
+    <Project Path="CH04/DateUtilsTests/Tests.csproj" />
+    <Project Path="CH04/Posts/Posts.csproj" />
+    <Project Path="CH04/Summer/Summer.csproj" />
+    <Project Path="CH04/User/User.csproj" />
+  </Folder>
+  <Folder Name="/CH05/">
+    <Project Path="CH05/Blabber.Models/Blabber.Models.csproj" />
+    <Project Path="CH05/Blabber/Blabber.csproj" Id="6f475151-cc6c-455d-8189-7665e2417406" />
+    <Project Path="CH05/BlabberCore/BlabberCore.csproj" />
+    <Project Path="CH05/DI/DI.csproj" />
+  </Folder>
+  <Folder Name="/CH06/">
+    <Project Path="CH06/LoginExample/LoginExample.csproj" />
+    <Project Path="CH06/XSS/FoobleXSS.csproj" />
+  </Folder>
+  <Folder Name="/CH07/">
+    <Project Path="CH07/BenchmarkRunner/SimpleBenchmarkRunner.csproj" />
+    <Project Path="CH07/IO/IO.csproj" />
+    <Project Path="CH07/Patterns/Patterns.csproj" />
+  </Folder>
+  <Folder Name="/CH08/">
+    <Project Path="CH08/Connections/Connections.csproj" />
+  </Folder>
+  <Folder Name="/CH09/">
+    <Project Path="CH09/Exceptions/Exceptions.csproj" />
+    <Project Path="CH09/InfiniteLoop/InfiniteLoop.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".eslintrc" />
+    <File Path="README.md" />
+  </Folder>
+</Solution>
