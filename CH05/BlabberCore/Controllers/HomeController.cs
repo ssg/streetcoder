@@ -8,7 +8,7 @@ public class HomeController(BlabStorage storage) : Controller
 {
     private static readonly HomepageModel defaultHomepageModel = new()
     {
-        Blabs = Enumerable.Empty<Blab>(),
+        Blabs = [],
         Form = new BlabForm(),
     };
 
