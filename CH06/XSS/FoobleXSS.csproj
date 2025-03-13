@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-      <Nullable>enable</Nullable>
-    <UserSecretsId>fooble</UserSecretsId>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UserSecretsId>fooble</UserSecretsId>
+		<NoWarn>1701;1702;IDE0130</NoWarn>
+	</PropertyGroup>
 
 </Project>

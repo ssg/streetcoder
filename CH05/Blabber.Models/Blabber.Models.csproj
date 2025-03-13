@@ -3,6 +3,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
 		<LangVersion>7.3</LangVersion>
 		<Nullable>disable</Nullable>
+		<NoWarn>1701;1702;IDE0130</NoWarn>
 	</PropertyGroup>
 
     <ItemGroup>

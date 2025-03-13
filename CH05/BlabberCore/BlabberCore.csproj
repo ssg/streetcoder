@@ -4,6 +4,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<RootNamespace>Blabber</RootNamespace>
 		<Nullable>disable</Nullable>
+		<NoWarn>1701;1702;IDE0130;NETSDK1206</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
