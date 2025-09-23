@@ -1,9 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
 		<OutputType>Exe</OutputType>
-		<NoWarn>1701;1702;IDE0130</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
