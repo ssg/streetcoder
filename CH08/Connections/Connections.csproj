@@ -3,8 +3,8 @@
 		<OutputType>Exe</OutputType>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="MySql.Data" Version="9.2.0" />
+		<PackageReference Include="MySql.Data" Version="9.4.0" />
 		<PackageReference Include="Npgsql" Version="9.0.3" />
-		<PackageReference Include="System.Drawing.Common" Version="9.0.3" />
+		<PackageReference Include="System.Drawing.Common" Version="9.0.9" />
 	</ItemGroup>
 </Project>
