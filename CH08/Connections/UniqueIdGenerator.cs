@@ -18,7 +18,7 @@ class UniqueIdGeneratorLock
 {
     private int value;
 
-    private object valueLock = new();
+    private Lock valueLock = new();
 
     public int GetNextValue()
     {

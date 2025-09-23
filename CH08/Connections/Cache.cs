@@ -3,7 +3,7 @@
 namespace Connections;
 public class Cache
 {
-    private static object instanceLock = new();
+    private static Lock instanceLock = new();
     private static Cache? instance;
 
     public static Cache Instance
